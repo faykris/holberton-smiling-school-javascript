@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Holberton Smiling School</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="xml-scripts.js"></script>
+</head>
+
+<body class="courses container-fluid">
+    <header class="py-2">
+        <nav class="navbar navbar-expand-sm navbar-dark text-uppercase">
+
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="brand">
+                <a class="navbar-brand" href="#">
+                    <div class="logo d-flex flex-column-sm justify-content-center alig-items-center">
+                        <div class="logo-img px-2">
+                            <img src="images/smile_off.png" alt="logo" width="45">
+                        </div>
+                        <div class="logo-text px-2">
+                            <img src="images/logo.png" alt="letter" width="160">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--Navbar collapse options -->
+            <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="d-nav-1 nav-link disabled text-primary mx-2" href="#">courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-white" href="#">pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-white" href="#">login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- ********* Hero Piece Section ********* -->
+        <section class="hero-piece text-center justify-content-center alig-items-center text-white px-0 pb-3">
+
+            <!-- Hero title-->
+            <div class="text-white text-center py-4 px-2">
+                <div class="col d-none d-sm-block">
+                    <h2 class="courses-title my-0 font-weight-normal">« Don’t cry because it’s over.</h2>
+                    <h2 class="courses-title my-0 font-weight-normal"><span class="text-primary">Smile</span> because it
+                        happened. »</h2>
+                </div>
+            </div>
+        </section>
+        <!-- ********* Seach Filter Section ********* -->
+        <section class="bg-primary d-flex justify-content-center text-white py-4">
+            <form action="" class="filter-search row">
+                <div class="form-group col-12 col-sm-12 col-md-4 text-left">
+                    <label for="keywords" class="text-uppercase">keywords</label>
+                    <input class="form-control text-white" type="search" name="keywords" id="keywords"
+                        placeholder=" Search by keywords">
+                </div>
+                <div class="form-group col-12 col-sm-6 col-md-4 text-left">
+                    <label for="topic" class="text-uppercase">topic</label>
+                    <select id="topic" class="form-control text-white" id="topic">
+                        <option value="all">All</option>
+                        <option value="novice">Novice</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="expert">Expert</option>
+                    </select>
+                </div>
+                <div class="form-group col-12 col-sm-6 col-md-4 text-left">
+                    <label for="sort-by" class="text-uppercase">sort by</label>
+                    <select id="sort-by" class="form-control text-white" id="sort-by">
+                        <option value="most_popular">Most Popular</option>
+                        <option value="most_recent">Most Recent</option>
+                        <option value="most_viewed">Most viewed</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+
+        <section class="bg-white d-flex justify-content-center text-dark">
+            <div class="videos-row container-xl justify-content-center pb-3">
+                <div class="col-12 text-left pt-5 pb-3">
+                    <p id="c-quantity" class="text-secondary"></p> <!-- 12 videos -->
+                </div>
+                <div id="coursesLoader" class="col-12 d-flex justify-content-center p-5">
+                    <div class="loader"></div>
+                </div>
+                <div id="coursesRow" class="row">
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course col-lg-3 col-md-4 col-sm-6 card py-3 d-none">
+                        <img class="card-img-top" src="" alt="Card image 1">
+                        <div class="car-play p-0">
+                            <img class="card-logo" src="images/play.png" alt="play">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold"></h5>
+                            <p class="card-text text-secondary"></p>
+                            <div class="author d-flex alig-items-center">
+                                <img class="rounded-circle my-2" src="" alt="author_1" width="30">
+                                <h5 class="text-primary align-self-center ml-3 mb-0"></h5>
+                            </div>
+                            <div class="video-rated d-flex justify-content-between py-2">
+                                <div class="rating-stars d-flex">
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                    <div class="star mr-1">
+                                        <span class="holberton_school-icon-star" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="rating-time d-flex text-right">
+                                    <p class="p-0 m-0 text-right text-primary align-self-right font-weight-bold"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer text-white px-5 pt-5 pb-3">
+        <div class="row w-100 justify-content-center">
+            <div class="footer-logo col-sm-9">
+                <div class="d-flex flex-column-sm alig-items-center py-3">
+                    <div class=" px-2">
+                        <img src="images/smile_off.png" alt="logo" width="45">
+                    </div>
+                    <div class=" px-2">
+                        <img src="images/logo.png" alt="letter" width="160">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-s-m col-sm-3 d-flex justify-content-sm-end py-3">
+                <span class="holberton_school-icon-ic_facebook m-2" aria-hidden="true"></span>
+                <span class="holberton_school-icon-ic_twitter m-2" aria-hidden="true"></span>
+                <span class="holberton_school-icon-ic_instagram m-2" aria-hidden="true"></span>
+            </div>
+            <div class="col-12 text-center">
+                <p class="pt-4 pb-3 copyright">©smileschool 2020</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
