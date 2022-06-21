@@ -1,4 +1,3 @@
-
 body {
   font-family: Source Sans Pro !important;
 }
@@ -7,23 +6,23 @@ body {
 /* Variables
   ============================= */
 *:root {
-    --color-primary: #C271FF;
-    --color-secondary: #071629;
-    --color-check: #82D24F;
-    --color-shadow: #343434;
-    --color-white: #FFFFFF;
-    --color-grey: #797979;
+  --color-primary: #C271FF;
+  --color-secondary: #071629;
+  --color-check: #82D24F;
+  --color-shadow: #343434;
+  --color-white: #FFFFFF;
+  --color-grey: #797979;
 }
 
 .homepage {
-    background-image: url(images/pic_1.jpg);
-    background-color: var(--color-secondary);
-    background-position: top;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    width: 100% !important;
+  background-image: url(images/pic_1.jpg);
+  background-color: var(--color-secondary);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
 }
 
 .pricing {
@@ -53,76 +52,85 @@ body {
 }
 
 header {
-    margin: 0 5% 0 7%;
+  margin: 0 5% 0 7%;
 }
 
 .pro-row {
-    margin: 0 7%;
+  margin: 0 7%;
 }
 
 .hero-piece {
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 800;
-} 
+}
 
 .hero-piece h1 {
-    font-size: 5rem;
-    margin-top: 10rem;
+  font-size: 5rem;
+  margin-top: 10rem;
 }
 
 .pro-title {
-    margin-top: 8rem;
+  margin-top: 8rem;
 }
 
 .btn {
-    border-radius: 500px !important;
+  border-radius: 500px !important;
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    box-shadow: 0 0 18px var(--color-shadow) !important;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 18px var(--color-shadow) !important;
 }
 
 .text-primary {
-    color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    opacity: 0.9 !important;
-    background-color: var(--color-primary) !important;
-    border-color: var(--color-primary) !important;
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  opacity: 0.9 !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
 }
 
 .nav-link:hover {
-    color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
 }
 
 .pro {
-    padding: 1.5rem .2rem;
+  padding: 1.5rem .2rem;
 }
 
 .pro-img {
-    width: 50% !important;
-    
+  width: 50% !important;
+
 }
 
 /* carousel of quotes - section */
-.quote-prev, .quote-prev {
+.quote-prev,
+.quote-prev {
   text-decoration: none !important;
 }
 
 .bg-primary {
-    background-color: var(--color-primary) !important;
+  background-color: var(--color-primary) !important;
 }
 
-.holberton_school-icon-arrow_3, .holberton_school-icon-arrow_4 {
-    font-size: 600%;
+.holberton_school-icon-arrow_3,
+.holberton_school-icon-arrow_4 {
+  font-size: 600%;
 }
 
 .holberton_school-icon-star {
@@ -163,7 +171,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-white);
 }
 
-.holberton_school-icon-ic_facebook, .holberton_school-icon-ic_twitter, .holberton_school-icon-ic_instagram {
+.holberton_school-icon-ic_facebook,
+.holberton_school-icon-ic_twitter,
+.holberton_school-icon-ic_instagram {
   font-size: 200%;
 }
 
@@ -197,16 +207,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 767px) {
-  .tut-carousel.carousel-item > div {
-      display: none;
+  .tut-carousel.carousel-item>div {
+    display: none;
   }
-  .tut-carousel .carousel-item > div:first-child {
-      display: block;
+
+  .tut-carousel .carousel-item>div:first-child {
+    display: block;
   }
 }
 
@@ -218,47 +234,47 @@ h1, h2, h3, h4, h5, h6 {
 
 /* medium screens */
 @media (min-width: 575px) and (max-width: 991px) {
-  
+
   .tut-carousel .carousel-item-end.active,
   .tut-carousel .carousel-item-next {
     transform: translateX(50%);
   }
-  
-  .tut-carousel .carousel-item-start.active, 
+
+  .tut-carousel .carousel-item-start.active,
   .tut-carousel .carousel-item-prev {
     transform: translateX(-50%);
   }
 }
 
 .tut-carousel .carousel-item-end,
-.tut-carousel .carousel-item-start { 
-transform: translateX(0);
+.tut-carousel .carousel-item-start {
+  transform: translateX(0);
 }
 
 
 /* large screens */
 @media (min-width: 992px) {
-  
+
   .tut-carousel .carousel-item-end.active,
   .tut-carousel .carousel-item-next {
     transform: translateX(25%);
   }
-  
-  .tut-carousel .carousel-item-start.active, 
+
+  .tut-carousel .carousel-item-start.active,
   .tut-carousel .carousel-item-prev {
     transform: translateX(-25%);
   }
 }
 
 .tut-carousel .carousel-item-end,
-.tut-carousel .carousel-item-start { 
-transform: translateX(0);
+.tut-carousel .carousel-item-start {
+  transform: translateX(0);
 }
 
 /***************************
          pricing page
  ***************************/
- .what-is {
+.what-is {
   padding-top: 8rem;
 }
 
@@ -295,105 +311,119 @@ transform: translateX(0);
          courses page
  ***************************/
 
- .courses-title {
-   font-family: Coiny;
-   font-size: 2rem;
- }
+.courses-title {
+  font-family: Coiny;
+  font-size: 2rem;
+}
 
- [class*='d-nav']::before {
+[class*='d-nav']::before {
   content: '';
   position: absolute;
   bottom: 1rem;
   background-color: var(--color-white);
-  width: 4rem;
   height: 0.1rem;
- }
+}
 
- .filter-search {
-    width: 87%;
- }
+.d-nav-1::before {
+  width: 4rem;
+}
 
- .form-control {
-   font-family: holberton_school-icon, Source Sans Pro light;
-   background-color: #DDB0FF;
-   border: 0;
-   border-bottom: 1px solid var(--color-white);
-   border-radius: 0;
-   border-top-left-radius: 3px;
-   border-top-right-radius: 3px;
-   font-weight: 100;
- }
+.d-nav-2::before {
+  width: 3.5rem;
+}
 
- .form-control:focus {
-    background-color: #a84af0;
- }
+.filter-search {
+  width: 87%;
+}
 
- .form-control::placeholder {
-   color: var(--color-white);
-   opacity: .6;
- }
+.form-control {
+  font-family: holberton_school-icon, Source Sans Pro light;
+  background-color: #DDB0FF;
+  border: 0;
+  border-bottom: 1px solid var(--color-white);
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-weight: 100;
+}
+
+.form-control:focus {
+  background-color: #a84af0;
+}
+
+.form-control::placeholder {
+  color: var(--color-white);
+  opacity: .6;
+}
 
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
-    html {
-      font-size: 90%;
-    }
+  html {
+    font-size: 90%;
+  }
 
-    .d-nav-1::before {
-      bottom: 6rem;
-     }
+  .d-nav-1::before {
+    bottom: 6rem;
+  }
 
-    .homepage {
-        background-position: top;
-        background-size: inherit;
-    }
+  .d-nav-2::before {
+    bottom: 3.5rem;
+  }
 
-    .nabvar {
-        flex-wrap: nowrap;
-    }
+  .homepage {
+    background-position: top;
+    background-size: inherit;
+  }
 
-    .logo {
-        flex-direction: column !important;
-        text-align: center !important;
-    }
+  .nabvar {
+    flex-wrap: nowrap;
+  }
 
-    .brand {
-        padding-left: 13%;
-        width: 80%;
-        
-    }
-    .logo .logo-img img {
-        padding-top: .75rem;
-        width: 2rem;
-    }
-    .logo .logo-text img {
-        padding-top: .75rem;
-        width: 8rem;
-    }
+  .logo {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
 
-    .pro-img {
-        width: 2.5rem !important;
-    }
+  .brand {
+    padding-left: 13%;
+    width: 80%;
 
-    .pro {
-        font-size: 90% !important;
-    }
+  }
 
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h16M4 23h22'/%3e%3c/svg%3e") !important;
-    }
+  .logo .logo-img img {
+    padding-top: .75rem;
+    width: 2rem;
+  }
 
-    .pro-row {
-        margin: 0;
-    }
+  .logo .logo-text img {
+    padding-top: .75rem;
+    width: 8rem;
+  }
 
-    .car-img {
-      text-align: center !important;
-    }
+  .pro-img {
+    width: 2.5rem !important;
+  }
 
-    .holberton_school-icon-arrow_3, .holberton_school-icon-arrow_4 {
-      font-size: 4.5rem;
+  .pro {
+    font-size: 90% !important;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h16M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+
+  .pro-row {
+    margin: 0;
+  }
+
+  .car-img {
+    text-align: center !important;
+  }
+
+  .holberton_school-icon-arrow_3,
+  .holberton_school-icon-arrow_4 {
+    font-size: 4.5rem;
   }
 
   .blockquote {
@@ -409,19 +439,22 @@ transform: translateX(0);
     justify-content: center;
   }
 
-  .footer .row .footer-logo, .footer .row .footer-s-m{
+  .footer .row .footer-logo,
+  .footer .row .footer-s-m {
     display: flex;
     justify-content: center !important;
   }
 
-  .holberton_school-icon-ic_facebook, .holberton_school-icon-ic_twitter, .holberton_school-icon-ic_instagram {
+  .holberton_school-icon-ic_facebook,
+  .holberton_school-icon-ic_twitter,
+  .holberton_school-icon-ic_instagram {
     font-size: 300%;
   }
 
   .tut-prev {
     left: -2.5rem;
   }
-  
+
   .tut-next {
     right: -2.5rem;
   }
@@ -433,16 +466,18 @@ transform: translateX(0);
   html {
     font-size: 92% !important;
   }
-    .pro-img {
-        width: 75% !important;
-    }
 
-    .pro {
-        font-size: 90% !important
-    }
+  .pro-img {
+    width: 75% !important;
+  }
 
-    .holberton_school-icon-arrow_3, .holberton_school-icon-arrow_4 {
-      font-size: 4.5rem;
+  .pro {
+    font-size: 90% !important
+  }
+
+  .holberton_school-icon-arrow_3,
+  .holberton_school-icon-arrow_4 {
+    font-size: 4.5rem;
   }
 
   .car-play {
@@ -453,10 +488,11 @@ transform: translateX(0);
   .pricing {
     background-size: inherit;
   }
+
   .tut-prev {
     left: -3rem;
   }
-  
+
   .tut-next {
     right: -3rem;
   }
@@ -467,139 +503,159 @@ transform: translateX(0);
     width: 100% !important;
     margin-top: 3.3rem !important;
   }
-  
+
   .tut-prev {
     left: -3.3rem;
   }
-  
+
   .tut-next {
     right: -3.3rem;
   }
 }
 
 @media (max-width: 1200px) {
-    .pro-img {
-        width: 75% !important;
-    }
+  .pro-img {
+    width: 75% !important;
+  }
 
-    .pro {
-        font-size: 90% !important
-    }
-    .car-play {
-      width: 100%;
-      margin-top: 1.9rem;
-    }
+  .pro {
+    font-size: 90% !important
+  }
+
+  .car-play {
+    width: 100%;
+    margin-top: 1.9rem;
+  }
 }
 
 @media (min-width: 1201px) {
-    .homepage {
-        background-position: top;
-        background-size: contain;
-    }
+  .homepage {
+    background-position: top;
+    background-size: contain;
+  }
 
-    .car-play {
-      width: 100%;
-      margin-top: 2.4rem !important;
-    }
+  .car-play {
+    width: 100%;
+    margin-top: 2.4rem !important;
+  }
 
-    .tut-prev {
-      left: -4rem;
-    }
-    
-    .tut-next {
-      right: -4rem;
-    }
+  .tut-prev {
+    left: -4rem;
+  }
+
+  .tut-next {
+    right: -4rem;
+  }
 }
 
 @font-face {
-    font-family: 'holberton_school-icon';
-    src:  url('fonts/holberton_school-icon.eot?sq4eq4');
-    src:  url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
-      url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
-      url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
-      url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
-  
-  [class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'holberton_school-icon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .holberton_school-icon-arrow_1:before {
-    content: "\e900";
-  }
-  .holberton_school-icon-arrow_2:before {
-    content: "\e901";
-  }
-  .holberton_school-icon-arrow_3:before {
-    content: "\e902";
-  }
-  .holberton_school-icon-arrow_4:before {
-    content: "\e903";
-  }
-  .holberton_school-icon-arrow_5:before {
-    content: "\e904";
-  }
-  .holberton_school-icon-check:before {
-    content: "\e905";
-  }
-  .holberton_school-icon-ic_bag:before {
-    content: "\e906";
-  }
-  .holberton_school-icon-ic_cart:before {
-    content: "\e907";
-  }
-  .holberton_school-icon-ic_facebook:before {
-    content: "\e908";
-  }
-  .holberton_school-icon-ic_hearing:before {
-    content: "\e909";
-  }
-  .holberton_school-icon-ic_instagram:before {
-    content: "\e90a";
-  }
-  .holberton_school-icon-ic_laptop:before {
-    content: "\e90b";
-  }
-  .holberton_school-icon-ic_money:before {
-    content: "\e90c";
-  }
-  .holberton_school-icon-ic_music:before {
-    content: "\e90d";
-  }
-  .holberton_school-icon-ic_sound:before {
-    content: "\e90e";
-  }
-  .holberton_school-icon-ic_twitter:before {
-    content: "\e90f";
-  }
-  .holberton_school-icon-ic_video:before {
-    content: "\e910";
-  }
-  .holberton_school-icon-menu:before {
-    content: "\e911";
-  }
-  .holberton_school-icon-search_1:before {
-    content: "\e912";
-  }
-  .holberton_school-icon-search_2:before {
-    content: "\e913";
-  }
-  .holberton_school-icon-star:before {
-    content: "\e914";
-  }
+  font-family: 'holberton_school-icon';
+  src: url('fonts/holberton_school-icon.eot?sq4eq4');
+  src: url('fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+    url('fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+    url('fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+    url('fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 
-  
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'holberton_school-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-arrow_1:before {
+  content: "\e900";
+}
+
+.holberton_school-icon-arrow_2:before {
+  content: "\e901";
+}
+
+.holberton_school-icon-arrow_3:before {
+  content: "\e902";
+}
+
+.holberton_school-icon-arrow_4:before {
+  content: "\e903";
+}
+
+.holberton_school-icon-arrow_5:before {
+  content: "\e904";
+}
+
+.holberton_school-icon-check:before {
+  content: "\e905";
+}
+
+.holberton_school-icon-ic_bag:before {
+  content: "\e906";
+}
+
+.holberton_school-icon-ic_cart:before {
+  content: "\e907";
+}
+
+.holberton_school-icon-ic_facebook:before {
+  content: "\e908";
+}
+
+.holberton_school-icon-ic_hearing:before {
+  content: "\e909";
+}
+
+.holberton_school-icon-ic_instagram:before {
+  content: "\e90a";
+}
+
+.holberton_school-icon-ic_laptop:before {
+  content: "\e90b";
+}
+
+.holberton_school-icon-ic_money:before {
+  content: "\e90c";
+}
+
+.holberton_school-icon-ic_music:before {
+  content: "\e90d";
+}
+
+.holberton_school-icon-ic_sound:before {
+  content: "\e90e";
+}
+
+.holberton_school-icon-ic_twitter:before {
+  content: "\e90f";
+}
+
+.holberton_school-icon-ic_video:before {
+  content: "\e910";
+}
+
+.holberton_school-icon-menu:before {
+  content: "\e911";
+}
+
+.holberton_school-icon-search_1:before {
+  content: "\e912";
+}
+
+.holberton_school-icon-search_2:before {
+  content: "\e913";
+}
+
+.holberton_school-icon-star:before {
+  content: "\e914";
+}
